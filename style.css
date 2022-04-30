@@ -1,0 +1,268 @@
+body{
+    text-align: center;
+   margin: 0px;
+   overflow-x: hidden;
+}
+h1{
+    color: orange;
+    animation: dance 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    display: block;
+}
+.heading{
+    text-align: center;
+}
+.notfound h2{
+    color: blue;
+}
+
+@keyframes dance {
+    0% {
+        transform: rotateZ(3deg);
+    }
+    25% {
+        transform: rotateZ(-3deg);
+    }
+    50% {
+        transform: rotateZ(3deg);
+    }
+    75% {
+        transform: rotateZ(-3deg);
+    }
+    100% {
+        transform: rotateZ(3deg);
+    }
+}
+.searcharea{
+    position: relative;
+    margin-bottom: 20px;
+}
+#inputbox{
+    width:500px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: lightcoral;
+}
+#searchbtn{
+    width:50px;
+    height: 50px;
+    font-size: 30px;
+    position: absolute;
+    border-radius: 35px;
+    background-color: white;
+    top:5px;
+    right:33%;
+    border: 0px;
+    background-color: inherit;
+    padding:10px;
+}
+#inputbox:focus{
+    background-color: lightcoral;
+}
+#inputbox::placeholder{
+    font-size: 20px;
+    padding: 10px;
+}
+input[type="text"]{
+    font-size: 24px;
+    padding-left:10px;
+}
+#searchbtn:hover{
+    cursor: pointer;
+}
+.cards{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-items: center;
+    text-align: center;
+}
+.card{
+    width:400px;
+    height:auto;
+    border: 1px solid black;
+    box-sizing: content-box;
+    border-radius: 50px;
+    background-color: lightcoral;
+    margin-bottom: 20px;
+}
+.card img{
+    width:100%;
+    height:300px;
+    border-radius: 50px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+.card h3{
+    color: blue;
+    font-size: 30px;
+}
+
+.notfound{
+    width: 100vw;
+    text-align: center;
+}
+.receipe-btn{
+   width:250px;
+   height:50px;
+   border-radius: 25px;
+   background: linear-gradient(to right,green,yellow);
+   margin-bottom: 20px;
+}
+.receipe-btn:hover{
+    cursor: pointer;
+}
+
+.show{
+    display: block;
+}
+.dontshow{
+    display: none;
+}
+#details{
+    width:800px;
+    height:500px;
+    border: 1px solid black;
+    background-color: yellow;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    overflow-y: scroll;
+}
+#details img{
+    width:600px;
+}
+#details a{
+    display: block;
+    font-size: 24px;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#details a:hover{
+    cursor: pointer;
+}
+#closebtn{
+    width:40px;
+    height:40px;
+    font-size: 40px;
+    background-color: yellow;
+    border: none;
+}
+#closebtn:hover{
+    cursor: pointer;
+}
+
+#details img{
+    width:700px;
+    height:500px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+   ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: blue;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: green;
+  } 
+
+  #details p{
+      line-height: 1.8;
+      padding: 20px;
+      font-family:sans-serif;
+      font-size: 16px;
+      color: darkgreen;
+  }
+
+  @media screen and (max-width:768px){
+      .cards{
+          display: grid;
+          grid-template-columns: repeat(1,1fr);
+      }
+      .card{
+          width:300px;
+      }
+      #details{
+          width:300px;
+      }
+      #details img{
+          width: 250px;
+          height:100px;
+      }
+      #inputbox{
+          width: 300px;
+      }
+      #searchbtn{
+          position: absolute;
+          right:10%;
+      }
+
+  }
+
+  @media screen and (min-width:768px){
+      .cards{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+      }
+      #details{
+          width:600px;
+      }
+      #details img{
+          width:500px;
+          height:400px;
+      }
+      #searchbtn{
+          position: absolute;
+          right:20%;
+      }
+      
+  }
+
+  @media screen and (min-width:912px){
+      .cards{
+          display: grid;
+          grid-template-columns: repeat(3,1fr);
+      }
+      #searchbtn{
+          position: absolute;
+          right:33%;
+      }
+      #details{
+          width:700px;
+      }
+      #details img{
+          width:500px;
+          height: 400px;
+      }
+      .card{
+          width:300px;
+      }
+      
+  }
+
+  @media screen and (min-width:1012px){
+      #searchbtn{
+          position: absolute;
+          right:26%;
+      }
+      
+  }
+
+  @media screen and (min-width:1100px){
+      .card{
+          width:400px;
+      }
+      #searchbtn{
+          position: absolute;
+          right:33%;
+      }
+  }
