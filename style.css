@@ -36,27 +36,29 @@ h1{
     }
 }
 .searcharea{
-    position: relative;
-    margin-bottom: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 #inputbox{
-    width:500px;
+    width:600px;
     height: 50px;
-    border-radius: 25px;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-right: 0px;
+    outline: none;
     background-color: lightcoral;
 }
 #searchbtn{
-    width:50px;
-    height: 50px;
+    width: 40px;
+    height:56px;
     font-size: 30px;
-    position: absolute;
-    border-radius: 35px;
-    background-color: white;
-    top:5px;
-    right:33%;
-    border: 0px;
-    background-color: inherit;
-    padding:10px;
+    background-color: lightcoral;
+    border-left: none;
+    padding-top: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding-right: 50px;
 }
 #inputbox:focus{
     background-color: lightcoral;
@@ -184,86 +186,64 @@ input[type="text"]{
       color: darkgreen;
   }
 
-  @media screen and (max-width:768px){
-      .cards{
-          display: grid;
-          grid-template-columns: repeat(1,1fr);
-      }
+  
+  @media screen and (max-width: 1012px){
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card{
+        width:300px;
+    }
+}
+
+  @media screen and (max-width: 768px){
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+    .card{
+        margin: 0;
+        width:300px;
+    }
+    #details{
+        width: 500px;
+    }
+}
+@media screen and (max-width:520px){
+
+    .cards{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+    .card{
+        width:400px;
+    }
+    #details{
+        width:280px;
+    }
+    #details img{
+        width:250px;
+        height:200px;
+    }
+      
+  }
+
+  @media screen and (max-width:400px){
       .card{
           width:300px;
-      }
-      #details{
-          width:300px;
-      }
-      #details img{
-          width: 250px;
-          height:100px;
       }
       #inputbox{
-          width: 300px;
-      }
-      #searchbtn{
-          position: absolute;
-          right:10%;
-      }
-
-  }
-
-  @media screen and (min-width:768px){
-      .cards{
-          display: grid;
-          grid-template-columns: repeat(2,1fr);
-      }
-      #details{
-          width:600px;
-      }
-      #details img{
-          width:500px;
-          height:400px;
-      }
-      #searchbtn{
-          position: absolute;
-          right:20%;
-      }
-      
-  }
-
-  @media screen and (min-width:912px){
-      .cards{
-          display: grid;
-          grid-template-columns: repeat(3,1fr);
-      }
-      #searchbtn{
-          position: absolute;
-          right:33%;
-      }
-      #details{
-          width:700px;
-      }
-      #details img{
-          width:500px;
-          height: 400px;
-      }
-      .card{
-          width:300px;
-      }
-      
-  }
-
-  @media screen and (min-width:1012px){
-      #searchbtn{
-          position: absolute;
-          right:26%;
-      }
-      
-  }
-
-  @media screen and (min-width:1100px){
-      .card{
-          width:400px;
-      }
-      #searchbtn{
-          position: absolute;
-          right:33%;
+          width:200px;
       }
   }
+
+
+@media screen and (min-width: 1100px){
+    .cards{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .card{
+        width:400px;
+    }
+}
