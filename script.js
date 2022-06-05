@@ -1,12 +1,21 @@
-var searchbtn=document.getElementById('searchbtn');
+var searchbtni=document.getElementById('searchbtn-i');
+var searchbtnc=document.getElementById('searchbtn-c');
+var searchbtna=document.getElementById('searchbtn-a');
 var cards=document.getElementById('cardslist');
 var notfound=document.getElementsByClassName('notfound')
 var details=document.getElementById('details');
-var inputbox=document.getElementById('inputbox');
+var homebtn=document.getElementById("homebtn")
 var input="";
-searchbtn.addEventListener('click',getmeallist);
+(searchbtni && searchbtni.addEventListener('click',getmeallist1));
+(searchbtnc && searchbtnc.addEventListener('click',getmeallist2));
+(searchbtna && searchbtna.addEventListener('click',getmeallist3));
 cards.addEventListener('click',getmeals);
-function getmeallist(){
+
+homebtn.addEventListener('click',()=>{
+    window.location.assign("/home.html")
+})
+
+function getmeallist1(){
     let searchInputTxt = document.getElementById('inputbox').value.trim();
     if(searchInputTxt==='')
     {
@@ -14,6 +23,74 @@ function getmeallist(){
         return;
     }
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+    .then(response => response.json())
+    .then(data => {
+        let html = "";
+        if(data.meals){
+            data.meals.forEach(meal => {
+                html += `
+                <div class="card" id="${meal.idMeal}">
+                <img src="${meal.strMealThumb}" alt="food">
+                <h3>${meal.strMeal}</h3>
+                <button class="receipe-btn" id="btn1" >get receipe</button>
+              </div>
+                `;
+              
+            });
+        } 
+        else
+        {
+            html=`
+                <div class="notfound"><h2>OOPS!! We didnot find any matching meals for your ingrediants...</h2></div>
+            `;
+        }
+        inputbox.value="";
+        cards.innerHTML=html;
+    });
+
+}
+function getmeallist2(){
+    let searchInputTxt = document.getElementById('inputbox').value.trim();
+    if(searchInputTxt==='')
+    {
+        alert("Please Enter Valid Category")
+        return;
+    }
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${searchInputTxt}`)
+    .then(response => response.json())
+    .then(data => {
+        let html = "";
+        if(data.meals){
+            data.meals.forEach(meal => {
+                html += `
+                <div class="card" id="${meal.idMeal}">
+                <img src="${meal.strMealThumb}" alt="food">
+                <h3>${meal.strMeal}</h3>
+                <button class="receipe-btn" id="btn1" >get receipe</button>
+              </div>
+                `;
+              
+            });
+        } 
+        else
+        {
+            html=`
+                <div class="notfound"><h2>OOPS!! We didnot find any matching meals for your ingrediants...</h2></div>
+            `;
+        }
+        inputbox.value="";
+        cards.innerHTML=html;
+    });
+
+}
+function getmeallist3(){
+    let searchInputTxt = document.getElementById('inputbox').value.trim();
+    if(searchInputTxt==='')
+    {
+        alert("Please Enter Valid Area")
+        return;
+    }
+    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${searchInputTxt}`)
     .then(response => response.json())
     .then(data => {
         let html = "";

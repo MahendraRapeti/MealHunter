@@ -2,7 +2,15 @@ body{
     text-align: center;
    margin: 0px;
    overflow-x: hidden;
-   background-color: chartreuse;
+   background-color: lightcyan;
+}
+a{
+   font-size: 40px;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    cursor: pointer;
 }
 h1{
     color: orange;
@@ -49,7 +57,7 @@ h1{
     outline: none;
     background-color: lightcoral;
 }
-#searchbtn{
+#searchbtn-i,#searchbtn-c,#searchbtn-a{
     width: 40px;
     height:56px;
     font-size: 30px;
@@ -59,6 +67,11 @@ h1{
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
     padding-right: 50px;
+    margin-top: 0px;
+}
+img{
+    width:50%;
+    height: 400px;
 }
 #inputbox:focus{
     background-color: lightcoral;
@@ -184,6 +197,19 @@ input[type="text"]{
       font-family:sans-serif;
       font-size: 16px;
       color: darkgreen;
+  }
+
+  button{
+      width:100px;
+      height: 30px;;
+      color: black;
+      background-color: lightslategray;
+      margin-top: 10px;
+      
+  }
+  button:hover{
+      cursor: pointer;
+      transform: scale(1.01,1.01);
   }
 
   
