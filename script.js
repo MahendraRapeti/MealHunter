@@ -109,7 +109,7 @@ function getmeallist3(){
         else
         {
             html=`
-                <div class="notfound"><h2>OOPS!! We didnot find any matching meals for your ingrediants...</h2></div>
+                <div class="notfound"><h2>OOPS!! We didnot find any matching meals for your Query...</h2></div>
             `;
         }
         inputbox.value="";
