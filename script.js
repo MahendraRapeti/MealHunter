@@ -12,7 +12,7 @@ var input="";
 cards.addEventListener('click',getmeals);
 
 homebtn.addEventListener('click',()=>{
-    window.location.assign("/index.html")
+    window.location.assign("./index.html")
 })
 
 function getmeallist1(){

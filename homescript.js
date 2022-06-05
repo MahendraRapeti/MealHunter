@@ -3,11 +3,11 @@ var cbtn=document.getElementById("category")
 var abtn=document.getElementById("area")
 
 ibtn.addEventListener('click',()=>{
-    window.location.assign("/ingrediant.html")
+    window.location.assign("./ingrediant.html")
 })
 cbtn.addEventListener('click',()=>{
-    window.location.assign("/category.html")
+    window.location.assign("./category.html")
 })
 abtn.addEventListener('click',()=>{
-    window.location.assign("/area.html")
+    window.location.assign("./area.html")
 })
